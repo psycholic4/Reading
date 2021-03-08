@@ -24,3 +24,8 @@
 - 내부적으로 string.Format()으로 변환되는데 string.Format()은 object 배열을 전달받기 때문에 value type의 경우 박싱이 발생한다.
 - `$("{doubleValue.ToString()}")`처럼 미리 문자열로 변경하면 불필요한 박싱을 방지할 수 있다.
 - `:` 는 포맷 문자열의 시작으로 판단하기 때문에 3항 연산자 사용시에 괄호로 감싸야 컴파일 오류를 없앨 수 있다.
+
+## Chapter 5: 문화권별로 다른 문자열을 생성하려면 FormattableString을 사용하라
+
+- 문화권을 임의로 지정해야 하는 경우에는 명시적으로 FormattableString 객체를 생성하도록 코드를 작성하자.
+- var로 선언된 보간 문자열의 타입은 컴파일러가 코드의 조건들을 파악한 결과에 따라 string일 수도 FormattableString일 수도 있다.
